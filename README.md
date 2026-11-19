@@ -1,4 +1,4 @@
-# HAVEN
+# AfterGrid
 
 Offline-First Community Resilience and Disaster Resource Coordination.
 
