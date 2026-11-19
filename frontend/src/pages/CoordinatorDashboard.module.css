@@ -1,0 +1,547 @@
+.dashboard {
+  --haven-bg: #091424;
+  --haven-panel: #112238;
+  --haven-panel-deep: #0c1b2e;
+  --haven-border: #293d53;
+  --haven-text: #edf5fc;
+  --haven-muted: #96aabe;
+  --haven-accent: #5dd6ca;
+  --haven-accent-hover: #82e8df;
+
+  min-height: 100vh;
+  padding: 36px clamp(18px, 4vw, 56px);
+  background: var(--haven-bg);
+  color: var(--haven-text);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.dashboard * {
+  box-sizing: border-box;
+}
+
+.header,
+.panelHeader,
+.resultHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: var(--haven-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.header p,
+.panelHeader p,
+.hint {
+  color: var(--haven-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.header p,
+.panelHeader p {
+  margin: 5px 0 0;
+}
+
+.online,
+.offline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--haven-border);
+  border-radius: 30px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.online {
+  color: #7be3c6;
+  background: rgba(41, 135, 107, 0.1);
+}
+
+.offline {
+  color: #ffb3a7;
+  background: rgba(200, 80, 70, 0.08);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.metric,
+.panel {
+  background: var(--haven-panel);
+  border: 1px solid var(--haven-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.metric:hover {
+  border-color: #42647a;
+  transform: translateY(-2px);
+}
+
+.metric > span {
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.metric strong {
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.metric small {
+  color: var(--haven-muted);
+  font-size: 11px;
+}
+
+.metric .statusValue {
+  font-size: 25px;
+  color: var(--haven-accent);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.panel {
+  padding: 24px;
+  min-width: 0;
+}
+
+.panelHeader {
+  margin-bottom: 24px;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+.inventoryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid var(--haven-border);
+}
+
+.inventoryRow > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inventoryRow small {
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.inventoryControls {
+  display: flex;
+  gap: 8px;
+}
+
+.inventoryControls input {
+  width: 85px;
+  padding: 10px;
+  background: var(--haven-panel-deep);
+  color: var(--haven-text);
+  border: 1px solid var(--haven-border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.inventoryControls input:focus {
+  outline: 2px solid var(--haven-accent);
+  outline-offset: 2px;
+}
+
+.inventoryControls button,
+.primaryButton {
+  background: var(--haven-accent);
+  color: #06202a;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-weight: 750;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.inventoryControls button:hover:not(:disabled),
+.primaryButton:hover:not(:disabled) {
+  background: var(--haven-accent-hover);
+  transform: translateY(-1px);
+}
+
+.inventoryControls button:disabled,
+.primaryButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.syncStats {
+  display: flex;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.syncStats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.syncStats strong {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.syncStats span {
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 56px 16px;
+  border: 1px dashed var(--haven-border);
+  border-radius: 12px;
+  background: rgba(9, 20, 36, 0.35);
+}
+
+.emptyIcon {
+  color: var(--haven-accent);
+  font-size: 44px;
+}
+
+.emptyState h3 {
+  margin-bottom: 8px;
+}
+
+.emptyState p {
+  color: var(--haven-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.draftNotice {
+  color: #f0c989;
+  background: #30291d;
+  border: 1px solid #5c492b;
+  border-radius: 9px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resourceResult {
+  padding: 22px 0;
+  border-top: 1px solid var(--haven-border);
+}
+
+.resultHeading {
+  margin-bottom: 18px;
+}
+
+.resultHeading h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.resultHeading span {
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.comparison > div {
+  background: var(--haven-panel-deep);
+  border: 1px solid rgba(80, 110, 140, 0.16);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comparison span {
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.comparison strong {
+  color: var(--haven-accent);
+  font-size: 26px;
+}
+
+.allocationList {
+  display: flex;
+  flex-direction: column;
+}
+
+.allocationRow {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 60px;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.allocationLabel,
+.allocationNumbers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.allocationLabel strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.allocationLabel span,
+.allocationNumbers small {
+  color: var(--haven-muted);
+  font-size: 11px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barTrack {
+  height: 9px;
+  background: #24364a;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.optimizedBar,
+.baselineBar {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.optimizedBar {
+  background: var(--haven-accent);
+}
+
+.baselineBar {
+  background: #6d829f;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: var(--haven-muted);
+  font-size: 12px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.optimizedLegend {
+  background: var(--haven-accent);
+}
+
+.baselineLegend {
+  background: #6d829f;
+}
+
+.feedback {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 9px;
+  border: 1px solid rgba(93, 214, 202, 0.25);
+  background: rgba(93, 214, 202, 0.07);
+  color: var(--haven-accent);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  margin-top: 32px;
+  color: var(--haven-muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 22px 14px;
+  }
+
+  .header,
+  .panelHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .metrics {
+    gap: 10px;
+  }
+
+  .metric,
+  .panel {
+    padding: 16px;
+  }
+
+  .metric strong {
+    font-size: 28px;
+  }
+
+  .inventoryRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inventoryControls {
+    width: 100%;
+  }
+
+  .inventoryControls input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .allocationRow {
+    grid-template-columns: 105px minmax(0, 1fr) 40px;
+    gap: 8px;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric,
+  .inventoryControls button,
+  .primaryButton,
+  .optimizedBar,
+  .baselineBar {
+    transition: none;
+  }
+}
+
+/* Append these Step 12.2 rules to CoordinatorDashboard.module.css */
+.approvalControls { margin: 18px 0 24px; padding: 20px; border: 1px solid rgba(45,212,191,.28); border-radius: 16px; background: rgba(20,184,166,.07); color: #e7f7f5; }
+.approvalControls p { color: #a8bdc7; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.approvalControls code { color: #81e6d9; font-size: 12px; }
+.approvalActions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.approveButton, .rejectButton, .historyRefresh { padding: 11px 16px; border-radius: 10px; font-weight: 700; cursor: pointer; font: inherit; }
+.approveButton { background: #0d9488; color: white; border: 1px solid #14b8a6; }
+.approveButton:hover:not(:disabled) { background: #0f766e; }
+.rejectButton, .historyRefresh { background: rgba(255,255,255,.04); color: #d4e4ea; border: 1px solid rgba(148,163,184,.32); }
+.rejectButton:hover:not(:disabled), .historyRefresh:hover:not(:disabled) { background: rgba(255,255,255,.1); }
+.approveButton:disabled, .rejectButton:disabled, .historyRefresh:disabled { opacity: .5; cursor: not-allowed; }
+.confirmPanel { margin-top: 18px; padding: 16px; border: 1px solid rgba(251,191,36,.45); background: rgba(251,191,36,.07); border-radius: 12px; }
+.historyList { display: grid; gap: 12px; margin-top: 16px; }
+.historyEntry { border: 1px solid rgba(148,163,184,.2); background: rgba(15,23,42,.4); border-radius: 14px; padding: 16px; color: #e7f7f5; }
+.historyTop { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.historyStatus { font-size: 12px; font-weight: 700; color: #5eead4; }
+.historyEntry small { color: #a8bdc7; }
+.historyTotals { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 13px; text-transform: capitalize; }
+.historyId { color: #8ca5b4; font-size: 11px; overflow-wrap: anywhere; margin: 12px 0 0; }
+@media (max-width: 600px) { .approvalActions > button { flex: 1 1 100%; } }
+
+/* HAVEN Step 12.3B — append to CoordinatorDashboard.module.css */
+.receiptHistoryRow { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:14px; color:#a9c0c6; font-size:13px; }
+.issueReceiptButton { border:1px solid rgba(45,212,191,.4); border-radius:10px; padding:10px 14px; color:#09242a; background:#2dd4bf; font-weight:700; cursor:pointer; }
+.issueReceiptButton:hover:not(:disabled) { background:#5eead4; }
+.issueReceiptButton:disabled { opacity:.5; cursor:not-allowed; }
+.receiptGrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; margin-top:18px; align-items:start; }
+.receiptSecurityNotice { padding:12px 14px; background:rgba(245,158,11,.08); color:#e9c88d; border:1px solid rgba(245,158,11,.25); border-radius:10px; font-size:13px; line-height:1.5; }
+
+
+/* Step 12.3C receipt status and reissue controls */
+.receiptStatusList { margin-top: 14px; display: grid; gap: 12px; }
+.receiptStatusRow { padding: 14px; border: 1px solid #2a4055; border-radius: 12px; background: #0b1c30; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.receiptStatusRow p { margin: 6px 0; color: #a6b8ca; font-size: 13px; }
+.receiptStatusRow small { color: #8ea6bd; overflow-wrap: anywhere; }
+.reissuePanel { width: 100%; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid #2a4055; }
+.reissuePanel label { color: #b7c8d8; font-size: 13px; }
+.reissuePanel input { min-width: 230px; flex: 1; border: 1px solid #35526a; border-radius: 8px; background: #091b2c; color: #e9f3fa; padding: 10px; }

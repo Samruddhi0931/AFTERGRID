@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.button {
+  width: 100%;
+  border: 1px solid #2d8391;
+  border-radius: 9px;
+  padding: 11px 14px;
+  background: #123440;
+  color: #8ce8ed;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #1a4855;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.qrPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 12px;
+  border: 1px solid #34435b;
+  border-radius: 12px;
+  background: #0b1423;
+}
+
+.qrSurface {
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.qrSurface svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.caption {
+  color: #9de8ec;
+  font-size: 12px;
+  text-align: center;
+}
+
+.warning {
+  color: #e7c17a;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.error {
+  color: #ff9b9b;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}

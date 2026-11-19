@@ -1,0 +1,115 @@
+.receipt {
+  background: #101f2b;
+  color: #e9f5f3;
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  border-radius: 18px;
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading h3 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.heading p {
+  color: #a9c0c6;
+  font-size: 13px;
+}
+
+.eyebrow {
+  color: #5eead4;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.qrFrame {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.details span {
+  color: #91aeb7;
+  font-size: 12px;
+}
+
+.details strong {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.warning {
+  color: #e9c88d;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.printButton {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #2dd4bf;
+  color: #09242a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.printButton:hover {
+  background: #5eead4;
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .receipt,
+  .receipt * {
+    visibility: visible !important;
+  }
+
+  .receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #111;
+    background: white;
+    border: 1px solid #999;
+  }
+
+  .receipt span,
+  .receipt p,
+  .receipt strong {
+    color: #111;
+  }
+
+  .printButton {
+    display: none;
+  }
+}
