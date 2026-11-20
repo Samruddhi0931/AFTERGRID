@@ -1,9 +1,9 @@
-# HAVEN
+# AFTERGRID
 
 Offline-First Community Resilience and Disaster Resource Coordination.
 
 ## Overview
-HAVEN coordinates emergency requests, limited resources,
+AFTERGRID coordinates emergency requests, limited resources,
 allocation approvals, and verifiable resource distribution.
 
 ## Technology

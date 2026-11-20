@@ -103,7 +103,7 @@ export default function ResidentRequest({
           <div className={styles.logo}>H</div>
 
           <div>
-            <strong>HAVEN</strong>
+            <strong>AFTERGRID</strong>
             <span>Resident Emergency Portal</span>
           </div>
         </div>

@@ -414,7 +414,7 @@ export default function CoordinatorDashboard() {
       <header className={styles.header}>
         <div>
           <div className={styles.eyebrow}>
-            HAVEN / RATIONOS
+            AFTERGRID / RATIONOS
           </div>
 
           <h1>Command Center</h1>
@@ -1018,7 +1018,7 @@ export default function CoordinatorDashboard() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        HAVEN · Offline-first crisis coordination
+        AFTERGRID · Offline-first crisis coordination
         · Human oversight required
       </footer>
     </main>

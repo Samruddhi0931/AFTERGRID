@@ -12,8 +12,8 @@ export default defineConfig({
       includeAssets: ["favicon.ico"],
 
       manifest: {
-        name: "HAVEN — Emergency Resilience Network",
-        short_name: "HAVEN",
+        name: "AFTERGRID — Emergency Resilience Network",
+        short_name: "AFTERGRID",
         description:
           "Offline-first humanitarian emergency coordination",
 

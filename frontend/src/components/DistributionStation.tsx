@@ -101,7 +101,7 @@ export default function DistributionStation({ onCollected }: Props) {
   return (
     <section className={styles.station} aria-label="Distribution Station">
       <div className={styles.top}>
-        <div><span className={styles.eyebrow}>HAVEN / DISTRIBUTION</span><h2>Distribution Station</h2>
+        <div><span className={styles.eyebrow}>AFTERGRID / DISTRIBUTION</span><h2>Distribution Station</h2>
           <p>Scan a resident's allocation QR, verify the entitlement, then confirm handover.</p></div>
         <span className={styles.tag}>Online verification required</span>
       </div>

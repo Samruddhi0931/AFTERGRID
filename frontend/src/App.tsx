@@ -90,7 +90,7 @@ export default function App() {
               marginBottom: 8,
             }}
           >
-            HAVEN / THE HOLLOW
+            AFTERGRID / THE HOLLOW
           </div>
 
           <h1
@@ -104,7 +104,7 @@ export default function App() {
           </h1>
 
           <nav
-            aria-label="HAVEN sections"
+            aria-label="AFTERGRID sections"
             style={{
               display: "flex",
               gap: 10,

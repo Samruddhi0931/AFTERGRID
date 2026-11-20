@@ -14,11 +14,11 @@ export default function AllocationReceiptQR({ receipt }: Props) {
     const popup = window.open("", "_blank", "width=520,height=720");
     if (!popup) { window.alert("Allow popups to print the receipt."); return; }
     const doc = popup.document;
-    doc.title = "HAVEN Allocation Receipt";
+    doc.title = "AFTERGRID Allocation Receipt";
     const style = doc.createElement("style");
     style.textContent = "body{font-family:Arial,sans-serif;padding:32px;text-align:center;color:#13232b}svg{display:block;margin:20px auto}p{margin:12px 0}";
     doc.head.appendChild(style);
-    const title = doc.createElement("h2"); title.textContent = "HAVEN · Allocation Receipt"; doc.body.appendChild(title);
+    const title = doc.createElement("h2"); title.textContent = "AFTERGRID · Allocation Receipt"; doc.body.appendChild(title);
     const copy = svg.cloneNode(true); doc.body.appendChild(copy);
     for (const line of [`Household: ${receipt.household_id}`, `Resource: ${receipt.resource}`, `Quantity: ${receipt.quantity}`, "Keep private. Valid for one collection."]) {
       const p = doc.createElement("p"); p.textContent = line; doc.body.appendChild(p);
@@ -35,7 +35,7 @@ export default function AllocationReceiptQR({ receipt }: Props) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `haven-receipt-${receipt.receipt_id}.svg`;
+    link.download = `aftergrid-receipt-${receipt.receipt_id}.svg`;
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -43,7 +43,7 @@ export default function AllocationReceiptQR({ receipt }: Props) {
   return (
     <article className={styles.receipt}>
       <div className={styles.heading}>
-        <span className={styles.eyebrow}>HAVEN / DISTRIBUTION</span>
+        <span className={styles.eyebrow}>AFTERGRID / DISTRIBUTION</span>
         <h3>Allocation Receipt</h3>
         <p>Present this QR code at the distribution station.</p>
       </div>
