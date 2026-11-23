@@ -39,9 +39,4 @@ Frontend (second terminal):
 4. Verify the receipt at the distribution station.
 5. Confirm collection and demonstrate duplicate protection.
 
-## Security
-Intended for controlled localhost demonstration.
-Volunteer authentication is required before public deployment.
-Do not commit SQLite databases, tokens, or credentials.
-
 
