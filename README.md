@@ -44,5 +44,4 @@ Intended for controlled localhost demonstration.
 Volunteer authentication is required before public deployment.
 Do not commit SQLite databases, tokens, or credentials.
 
-## Hackathon
-Solo project. Demo video link to be added.
+
